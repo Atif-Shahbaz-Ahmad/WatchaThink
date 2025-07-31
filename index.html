@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WatchaThink - Movie Reviews & Watchlist</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="movies.js"></script>
+  <script src="app.js"></script>
+</head>
+<body>
+  
+  <header class="navbar">
+    <nav class="nav-container">
+      <div class="nav-left">
+        <h1 class="logo">Watch<Span>aThink</Span></h1>
+      </div>
+      <div class="nav-center">
+        <form class="nav-search" onsubmit="handleSearch(event)">
+          <input type="text" id="searchInput" placeholder="Search movies..." aria-label="Search movies">
+          <button type="submit">&#128269;</button>
+        </form>
+      </div>
+      <div class="nav-right">
+        <a href="#home" onclick="scrollToSection('home')">Home</a>
+        <a href="#popular" onclick="scrollToSection('popular')">Popular</a>
+        <a href="#watched" onclick="scrollToSection('watched')">Watched</a>
+        <a href="#watchlist" onclick="scrollToSection('watchlist')">Watchlist</a>
+        <a href="contact.html">Contact</a>
+        <a href="about.html">About</a>
+      </div>
+    </nav>
+  </header>
+
+  
+  <section id="home" class="hero-slider">
+  
+  </section>
+
+ 
+  <section id="popular" class="section popular-movies">
+    <div class="section-header">
+      <h2>Popular Movies & TV Shows</h2>
+      <div class="scroll-buttons">
+        <button class="scroll-left" onclick="scrollMovieGrid('popular-grid', -1)">&#10094;</button>
+        <button class="scroll-right" onclick="scrollMovieGrid('popular-grid', 1)">&#10095;</button>
+      </div>
+    </div>
+    <div class="movie-grid" id="popular-grid">
+     
+    </div>
+  </section>
+
+  <section id="watched" class="section watched-movies">
+    <div class="section-header">
+      <h2>Already Watched</h2>
+      <span class="count" id="watched-count">0 movies</span>
+    </div>
+    <div class="movie-grid" id="watched-grid">
+     
+    </div>
+    <div class="empty-state" id="watched-empty" style="display: none;">
+      <div class="empty-icon">✓</div>
+      <h3>No movies watched yet</h3>
+      <p>Mark movies as watched to see them here</p>
+    </div>
+  </section>
+
+  <section id="watchlist" class="section watchlist-movies">
+    <div class="section-header">
+      <h2>My Watchlist</h2>
+      <span class="count" id="watchlist-count">0 movies</span>
+    </div>
+    <div class="movie-grid" id="watchlist-grid">
+    
+    </div>
+    <div class="empty-state" id="watchlist-empty" style="display: none;">
+      <div class="empty-icon">🔖</div>
+      <h3>Your watchlist is empty</h3>
+      <p>Add movies you want to watch later</p>
+    </div>
+  </section>
+
+  <div class="modal" id="movieModal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button class="close-btn" onclick="closeModal()">&times;</button>
+      </div>
+      <div class="modal-body" id="modalBody">
+    
+      </div>
+    </div>
+  </div>
+
+  <div class="search-results" id="searchResults" style="display: none;">
+    <div class="search-content">
+      <div class="search-header">
+        <h3>Search Results</h3>
+        <button class="close-btn" onclick="closeSearch()"></button>
+      </div>
+      <div class="search-body" id="searchBody">
+        
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>
